@@ -4,6 +4,7 @@ body {
     font-family: Jaldi;
 }
 
+/* navbar */
 .navbar {
     background-color: #3E4377;
 }
@@ -23,22 +24,69 @@ body {
     text-decoration: underline;
 }
 
-.h1 {
-    font-size: 40px;
+/* content-1 */
+.content-1 .btn:hover {
+    background-color: #5962BA;
 }
 
-.one {
+.content-1 .h1 {
+    font-size: 60px;
+}
+
+.content-1 a {
+    font-size: 50px;
+}
+
+.content-1 .one {
     color: #5962BA;
 }
 
-.two {
+.content-1 .two {
     color: #fff;
 }
 
-.btn {
+.content-1 .btn {
     background-color: #3E4377;
 }
 
-.h2 {
-    font-size: 25px;
+/* content-2 */
+.content-2 {
+    background-color: #5259A1;
+    color: #fff
+}
+
+.content-2 .item {
+    background-color: #CBD0FF;
+    color: #865DFB;
+}
+
+.content-2 .rounded-circle {
+    background-color: #865DFB;
+    color: #fff;
+}
+
+/* content-3 */
+.content-3 img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.content-3 .contact .h4 {
+    color: #3E4377;
+}
+
+.content-3 .contact .btn {
+    background-color: #3E4377;
+    color: #fff;
+}
+
+.content-3 .contact .btn:hover {
+    background-color: #5962BA;
+}
+
+/* footer */
+.footer {
+    background-color: #3E4377;
+    color: #fff;
+    font-family: Itim;
 }
