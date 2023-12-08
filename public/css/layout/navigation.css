@@ -1,0 +1,59 @@
+.navbar {
+    background-color: #3E4377;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-family: Itim;
+}
+
+.list-group {
+    background-color: #F4D160;
+    height: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #F4D160;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-size: large;
+    font-weight: 400;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+    border: none;
+    background-color: transparent;
+}
+
+.sidenav a:hover {
+    border-radius: 0%;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

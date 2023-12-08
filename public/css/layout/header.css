@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #3E4377;
+}
+
+.title {
+    color: #fff;
+    font-family: Itim;
+}
+
+.nav-item a {
+    color: #fff;
+    font-family: Jaldi;
+}
+
+.nav-item a:hover {
+    color: #fff;
+    text-decoration: underline;
+}

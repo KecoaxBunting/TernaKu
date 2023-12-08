@@ -9,7 +9,7 @@ body {
     background-color: #3E4377;
 }
 
-.navbar-brand {
+.title {
     color: #fff;
     font-family: Itim;
 }
@@ -82,11 +82,4 @@ body {
 
 .content-3 .contact .btn:hover {
     background-color: #5962BA;
-}
-
-/* footer */
-.footer {
-    background-color: #3E4377;
-    color: #fff;
-    font-family: Itim;
 }

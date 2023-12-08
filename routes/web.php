@@ -39,8 +39,8 @@ Route::get('/keuangan', function () {
 });
 
 //Perlengkapan
-Route::get('/perlengkapan', function(){
-    return view('perlengkapan');
+Route::get('/aset', function(){
+    return view('aset');
 });
 
 //Kesehatan
