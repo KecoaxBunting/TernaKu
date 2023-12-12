@@ -1,3 +1,12 @@
 #content {
     transition: margin-left .5s;
 }
+
+.btn-warning {
+    background-color: #f4d160 !important;
+    border-color: #f4d160 !important;
+}
+
+.btn-warning:hover {
+    opacity: 90%;
+}
