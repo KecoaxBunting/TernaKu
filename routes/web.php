@@ -1,5 +1,13 @@
 <?php
 
+use App\Http\Controllers\asetController;
+use App\Http\Controllers\dataPakanController;
+use App\Http\Controllers\kesehatanController;
+use App\Http\Controllers\keuanganController;
+use App\Http\Controllers\landingController;
+use App\Http\Controllers\produksiController;
+use App\Http\Controllers\staffController;
+use App\Http\Controllers\ternakSayaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,43 +22,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Landing page
-Route::get('/', function () {
-    return view('landingPage');
-});
+Route::get('/', [landingController::class, 'show']);
 
 //Ternak saya
-Route::get('/ternakSaya', function () {
-    return view('ternakSaya');
-});
+Route::get('/ternakSaya', [ternakSayaController::class, 'show']);
 
 //Data pakan
-Route::get('/dataPakan', function(){
-    return view('dataPakan');
-});
+Route::get('/dataPakan', [dataPakanController::class, 'show']);
 
 //Produksi
-Route::get('/produksi', function () {
-    return view('produksi');
-});
+Route::get('/produksi', [produksiController::class, 'show']);
 
 //Keuangan
-Route::get('/keuangan', function () {
-    return view('keuangan');
-});
+Route::get('/keuangan', [keuanganController::class, 'show']);
 
-//Perlengkapan
-Route::get('/aset', function(){
-    return view('aset');
-});
+//Aset
+Route::get('/aset', [asetController::class, 'show']);
 
 //Kesehatan
-Route::get('/kesehatan', function () {
-    return view('kesehatan');
-});
+Route::get('/kesehatan', [kesehatanController::class, 'show']);
 
 //Staff
-Route::get('/staff', function () {
-    return view('staff');
-});
+Route::get('/staff', [staffController::class, 'show']);
 
 

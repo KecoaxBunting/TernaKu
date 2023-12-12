@@ -18,8 +18,8 @@ class farm extends Model
     public function asset():HasMany{
         return $this->hasMany(asset::class);
     }
-    public function transaction_header():BelongsTo{
-        return $this->belongsTo(transaction_header::class);
+    public function transaction_header():HasMany{
+        return $this->hasMany(transaction_header::class);
     }
     public function animal():HasMany{
         return $this->hasMany(animal::class);
