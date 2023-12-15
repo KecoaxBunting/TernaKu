@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class product extends Model
+class feed extends Model
 {
     public function animalType():HasMany{
         return $this->hasMany(animalType::class);

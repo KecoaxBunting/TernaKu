@@ -1,0 +1,12 @@
+.row img {
+    width: 300px;
+    height: auto;
+}
+
+.btn-primary {
+    background-color: #3E4377 !important;
+}
+
+.btn-primary:hover {
+    background-color: #5962BA !important;
+}

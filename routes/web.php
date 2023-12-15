@@ -27,6 +27,10 @@ Route::get('/', [landingController::class, 'show']);
 //Ternak saya
 Route::get('/ternakSaya', [ternakSayaController::class, 'show']);
 
+//Ternak saya - add
+Route::get('/ternakSaya/tambah', [ternakSayaController::class, 'addForm']);
+Route::post('/ternakSaya/tambah', [ternakSayaController::class, 'store']);
+
 //Data pakan
 Route::get('/dataPakan', [dataPakanController::class, 'show']);
 
