@@ -31,6 +31,13 @@ Route::get('/ternakSaya', [ternakSayaController::class, 'show']);
 Route::get('/ternakSaya/tambah', [ternakSayaController::class, 'addForm']);
 Route::post('/ternakSaya/tambah', [ternakSayaController::class, 'store']);
 
+//Ternak saya - edit
+Route::get('/ternakSaya/edit/{id}', [ternakSayaController::class, 'editForm']);
+Route::put('/ternakSaya/edit/{id}', [ternakSayaController::class, 'update']);
+
+//Ternak saya - delete
+Route::get('/ternakSaya/hapus/{id}', [ternakSayaController::class, 'destroy']);
+
 //Data pakan
 Route::get('/dataPakan', [dataPakanController::class, 'show']);
 

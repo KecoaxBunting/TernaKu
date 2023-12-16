@@ -13,14 +13,16 @@
 
 <body>
     <div class="row">
-        <h2 class="text-center mt-2">Ternak baru</h2>
+        <h2 class="text-center mt-2">Edit Ternak</h2>
         <div class="col-md-6 offset-md-3">
-            <form action="/ternakSaya/tambah" method="post" enctype="multipart/form-data">
+            <form action="/ternakSaya/edit/{{ $animal->id }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                @method('PUT')
                 <div class="mb-3">
                     <label class="form-label" for="animalType">Hewan</label>
                     <select class="form-select" aria-label="Default select example" name="animalType" required>
-                        <option selected>Jenis hewan</option>
+                        <option value="{{ $animal->animal_type_id }}" selected>{{ $animal->animalType->animalName }}
+                        </option>
                         @foreach ($animalTypes as $animalType)
                             <option value="{{ $animalType->id }}">{{ $animalType->animalName }}</option>
                         @endforeach
@@ -28,21 +30,26 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="birthDate">Tanggal lahir</label>
-                    <input class="form-control" type="date" id="birthDate" name="birthDate" required>
+                    <input class="form-control" type="date" id="birthDate" name="birthDate"
+                        value="{{ $animal->birthDate }}" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="quantity">Jumlah</label>
-                    <input class="form-control" type="number" id="quantity" name="quantity" required>
+                    <input class="form-control" type="number" id="quantity" name="quantity"
+                        value="{{ $animal->quantity }}" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="kesehatan">Kesehatan</label>
-                    <input class="form-control" type="text" id="kesehatan" name="kesehatan" required>
+                    <input class="form-control" type="text" id="kesehatan" name="kesehatan"
+                        value="{{ $animal->kesehatan }}" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="foto">Foto</label>
-                    <input class="form-control" type="file" id="foto" name="foto" required>
+                    <br>
+                    <img src="{{ asset('storage/' . $animal->foto) }}" alt="">
+                    <input class="form-control" type="file" id="foto" name="foto"
+                        value="{{ $animal->foto }}">
                 </div>
-
 
                 <input class="btn btn-primary" type="submit" value="Submit">
             </form>

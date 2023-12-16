@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class FarmSeeder extends Seeder
 {
@@ -14,6 +15,12 @@ class FarmSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $data = [
+            [
+                'farmName'=>'Ternak Pak Jacob',
+                'location'=>'Wonosobo'
+            ]
+        ];
+        DB::table('farms')->insert($data);
     }
 }

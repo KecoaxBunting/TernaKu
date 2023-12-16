@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->string('gender');
             $table->date('birthDate');
             $table->integer('quantity');
             $table->foreignId('farm_id');
