@@ -31,6 +31,9 @@ Route::get('/ternakSaya', [ternakSayaController::class, 'show']);
 Route::get('/ternakSaya/tambah', [ternakSayaController::class, 'addForm']);
 Route::post('/ternakSaya/tambah', [ternakSayaController::class, 'store']);
 
+//Ternak saya - detail
+Route::get('ternakSaya/detail/{id}', [ternakSayaController::class, 'detail']);
+
 //Ternak saya - edit
 Route::get('/ternakSaya/edit/{id}', [ternakSayaController::class, 'editForm']);
 Route::put('/ternakSaya/edit/{id}', [ternakSayaController::class, 'update']);

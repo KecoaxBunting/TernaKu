@@ -5,6 +5,13 @@
 <link rel="stylesheet" href="{{ asset('css/ternakSaya.css') }}">
 
 @section('content')
+    <div>
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
     <a class="btn btn-warning add m-2 rounded-4" href="{{ url('/ternakSaya/tambah') }}" role="button">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000" class="bi bi-plus"
             viewBox="0 0 16 16">
@@ -25,13 +32,20 @@
                 </div>
                 <div class="col-md-8 d-flex justify-content-evenly">
                     <div class="card-body align-self-center">
-                        <h4 class="card-title mb-0">{{ $animal->animalType->animalName }}</h5>
-                            <p class="card-text mb-0 text-body-secondary">{{ $animal->kesehatan }}</p>
-                            <p class="card-text text-body-secondary">Jumlah: {{ $animal->quantity }}</p>
+                        <h4 class="card-title mb-0 text-capitalize">
+                            {{ $animal->animalType->animalName }}</h4>
+                        <p class="card-text mb-0 text-body-secondary text-capitalize">Status: {{ $animal->kesehatan }}
+                        </p>
+                        <p class="card-text text-body-secondary">Jumlah: {{ $animal->quantity }} ekor</p>
                     </div>
                     <div class="card-body align-self-center">
-                        <a class="nav-links float-end px-2" href="{{ url('/ternakSaya/edit/' . $animal->id) }}">Edit</a>
-                        <a class="nav-links float-end" href="{{ url('/ternakSaya/hapus/' . $animal->id) }}">Delete</a>
+                        <a class="nav-links float-end text-decoration-none"
+                            href="{{ url('/ternakSaya/hapus/' . $animal->id) }}"
+                            onclick="return confirm('Apa kamu yakin?')">Hapus</a>
+                        <a class="nav-links float-end px-5 text-decoration-none"
+                            href="{{ url('/ternakSaya/edit/' . $animal->id) }}">Edit</a>
+                        <a class="nav-links float-end text-decoration-none"
+                            href="{{ url('/ternakSaya/detail/' . $animal->id) }}">Detail</a>
                     </div>
                 </div>
             </div>
