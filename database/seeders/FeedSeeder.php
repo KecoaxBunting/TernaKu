@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\feed;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -32,6 +33,6 @@ class FeedSeeder extends Seeder
                 'foto' => 'pakan_kambing.jpg'
             ]
         ];
-        DB::table('feeds')->insert($datas);
+        feed::insert($datas);
     }
 }

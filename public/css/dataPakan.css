@@ -1,0 +1,21 @@
+.even {
+    background-color: #75C2F6 !important;
+}
+
+.odd {
+    background-color: #FBEEAC !important;
+}
+
+.card-body a {
+    color: #000;
+    opacity: 60%;
+    font-size: 1rem;
+}
+
+.card-body a:hover {
+    opacity: 100%;
+}
+
+.p-3 h2 {
+    font-family: Itim;
+}

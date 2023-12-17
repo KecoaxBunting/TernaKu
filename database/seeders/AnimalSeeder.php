@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\animal;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +34,6 @@ class AnimalSeeder extends Seeder
                 'foto'=>'sapi_betina.jpg'
             ], 
         ];
-        DB::table('animals')->insert($datas);
+        animal::insert($datas);
     }
 }

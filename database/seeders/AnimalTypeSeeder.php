@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\animalType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -47,6 +48,6 @@ class AnimalTypeSeeder extends Seeder
                 'product_id'=>2
             ],
         ];
-        DB::table('animal_types')->insert($datas);
+        animalType::insert($datas);
     }
 }

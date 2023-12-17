@@ -13,9 +13,8 @@
         <h5 class="text-capitalize">Jumlah: {{ $animal->quantity }} ekor</h5>
         <div class="d-flex">
             <a class="btn btn-success" href="{{ url('/ternakSaya/edit/' . $animal->id) }}" role="button">Edit</a>
-            <a class="btn btn-danger ps-2" href="{{ url('/ternakSaya/hapus/' . $animal->id) }}"
+            <a class="btn btn-danger mx-2" href="{{ url('/ternakSaya/hapus/' . $animal->id) }}"
                 onclick="return confirm('Apa kamu yakin?')" role="button">Hapus</a>
         </div>
     </div>
-
 @endsection

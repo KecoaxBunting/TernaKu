@@ -24,7 +24,7 @@
         $count = 0;
     @endphp
     @foreach ($animals as $animal)
-        <div class="card mb-2 w-100 rounded-0 even {{ $count % 2 == 0 ? 'even' : 'odd' }}" style="max-height: 250px">
+        <div class="card mb-2 w-100 rounded-0 {{ $count % 2 == 0 ? 'even' : 'odd' }}" style="max-height: 250px">
             <div class="row g-0">
                 <div class="col-md-4" style="max-height: 250px; max-width: 400px;">
                     <img src="{{ asset('storage/' . $animal->foto) }}" class="img-fluid" alt="..."

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\farm;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,6 @@ class FarmSeeder extends Seeder
                 'location'=>'Wonosobo'
             ]
         ];
-        DB::table('farms')->insert($data);
+        farm::insert($data);
     }
 }

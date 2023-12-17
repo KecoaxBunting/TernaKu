@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('itemName');
-            $table->bigInteger('itemPrice');
-            $table->integer('quantity');
+            $table->string('transactionName');
+            $table->bigInteger('price');
             $table->foreignId('transaction_type_id');
-            $table->string('note');
+            $table->text('note');
             $table->foreignId('farm_id');
-            $table->date('transactionDate');
+            $table->dateTime('transactionDate');
             $table->string('foto');
             $table->timestamps();
         });

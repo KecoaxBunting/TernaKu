@@ -9,8 +9,7 @@
         <a href="{{ url('/produksi') }}" class="list-group-item list-group-item-action py-3 3">Produksi</a>
         <a href="{{ url('/keuangan') }}" class="list-group-item list-group-item-action py-3 4">Keuangan</a>
         <a href="{{ url('/aset') }}" class="list-group-item list-group-item-action py-3 5">Aset</a>
-        <a href="{{ url('/kesehatan') }}" class="list-group-item list-group-item-action py-3 6">Kesehatan</a>
-        <a href="{{ url('/staff') }}" class="list-group-item list-group-item-action py-3 7">Staff</a>
+        <a href="{{ url('/staff') }}" class="list-group-item list-group-item-action py-3 6">Staff</a>
     </ul>
 </div>
 

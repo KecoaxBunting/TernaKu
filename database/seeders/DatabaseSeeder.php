@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             AnimalTypeSeeder::class,
             ProductSeeder::class,
             FeedSeeder::class,
-            FarmSeeder::class
+            FarmSeeder::class,
+            TransactionTypeSeeder::class
         ]);
     }
 }
