@@ -12,8 +12,5 @@ class asset extends Model
     public function farm():BelongsToMany{
         return $this->belongsToMany(farm::class);
     }
-    public function status():BelongsTo{
-        return $this->belongsTo(status::class);
-    }
     use HasFactory;
 }

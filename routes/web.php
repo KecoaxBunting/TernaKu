@@ -95,10 +95,36 @@ Route::get('/keuangan/hapus/{id}', [keuanganController::class, 'destroy']);
 //Aset
 Route::get('/aset', [asetController::class, 'show']);
 
-//Kesehatan
-Route::get('/kesehatan', [kesehatanController::class, 'show']);
+//Aset - add
+Route::get('/aset/tambah', [asetController::class, 'addForm']);
+Route::post('/aset/tambah', [asetController::class, 'store']);
+
+//Aset - detail
+Route::get('/aset/detail/{id}', [asetController::class, 'detail']);
+
+//Aset - edit
+Route::get('/aset/edit/{id}', [asetController::class, 'editForm']);
+Route::put('/aset/edit/{id}', [asetController::class, 'update']);
+
+//Aset - delete
+Route::get('/aset/hapus/{id}', [asetController::class, 'destroy']);
 
 //Staff
 Route::get('/staff', [staffController::class, 'show']);
+
+//Staff - add
+Route::get('/staff/tambah', [staffController::class, 'addForm']);
+Route::post('/staff/tambah', [staffController::class, 'store']);
+
+//Staff - detail
+Route::get('/staff/detail/{id}', [staffController::class, 'detail']);
+
+//Staff - edit
+Route::get('/staff/edit/{id}', [staffController::class, 'editForm']);
+Route::put('/staff/edit/{id}', [staffController::class, 'update']);
+
+//Staff - delete
+Route::get('/staff/hapus/{id}', [staffController::class, 'destroy']);
+
 
 

@@ -23,7 +23,7 @@ class AnimalSeeder extends Seeder
                 'quantity'=>20,
                 'farm_id'=>1,
                 'kesehatan'=>'Sangat sehat',
-                'foto'=>'ayam_betina.jpg'
+                'foto'=>'animals/ayam_betina.jpg'
             ],
             [
                 'animal_type_id'=>5,
@@ -31,7 +31,7 @@ class AnimalSeeder extends Seeder
                 'quantity'=>10,
                 'farm_id'=>1,
                 'kesehatan'=>' Sehat',
-                'foto'=>'sapi_betina.jpg'
+                'foto'=>'animals/sapi_betina.jpeg'
             ], 
         ];
         animal::insert($datas);

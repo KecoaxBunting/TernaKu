@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea class="form-control" placeholder="Tulis catatan di sini" id="note" name="note"></textarea>
-                    <label for="note">Comments</label>
+                    <label for="note">Catatan</label>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="foto">Foto</label>

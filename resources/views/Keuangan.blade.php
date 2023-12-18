@@ -1,6 +1,9 @@
 @extends('layout.template')
+
 @section('title', 'Keuangan')
+
 <link rel="stylesheet" href="{{ asset('css/keuangan.css') }}">
+
 @section('content')
     <div>
         @if (session()->has('message'))
@@ -13,6 +16,10 @@
         <h5 class="pemasukan">Pemasukan bulan ini: Rp.{{ $in_total }}</h5>
         <h5 class="pengeluaran">Pengeluaran bulan ini: Rp.{{ $out_total }}</h5>
     </div>
+    {{-- <div class="chart">
+        <h1>Pemasukan dan Pengeluaran</h1>
+        <canvas id="myChart" height="100px"></canvas>
+    </div> --}}
     <a class="btn btn-warning add m-2 rounded-4" href="{{ url('/keuangan/tambah') }}" role="button">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000" class="bi bi-plus"
             viewBox="0 0 16 16">
@@ -58,4 +65,30 @@
             $count += 1;
         @endphp
     @endforeach
+    {{-- <script type="text/javascript">
+        var labels = {{ Js::from($labels) }};
+        var data1 = {{ Js::from($in_total) }};
+        var data2 = {{ Js::from($out_total) }};
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Pemasukan dan ',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: data2,
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script> --}}
 @endsection

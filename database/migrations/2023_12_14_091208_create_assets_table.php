@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
             $table->string('assetName');
-            $table->foreignId('status_id');
+            $table->string('status');
             $table->foreignId('farm_id');
             $table->integer('quantity');
             $table->string('foto');

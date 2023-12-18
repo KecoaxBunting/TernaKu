@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             FeedSeeder::class,
             FarmSeeder::class,
-            TransactionTypeSeeder::class
+            TransactionTypeSeeder::class,
+            RoleSeeder::class
         ]);
     }
 }

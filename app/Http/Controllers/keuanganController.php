@@ -15,7 +15,8 @@ class keuanganController extends Controller
         $in_total = $in->sum('price');
         $out = transaction::where('transaction_type_id', 2)->get();
         $out_total = $out->sum('price');
-        return view('keuangan', compact(['transactions', 'in_total', 'out_total']));
+        $labels = transaction::selectRaw('MONTH(transactionDate)')->get();
+        return view('keuangan', compact(['transactions', 'in_total', 'out_total', 'labels']));
     }
     public function addForm(){
         $transactionTypes = transactionType::all();
@@ -32,10 +33,10 @@ class keuanganController extends Controller
         ];
 
         $request->validate([
-            'transactionName' => 'required|string',
+            'transactionName' => 'required',
             'price' => 'required|numeric|gt:0',
             'transactionType' => 'required',
-            'note' => 'max:255',
+            'note' => 'required|max:255',
             'transactionDate' => 'date',
             'foto' => 'required|mimes:jpeg,png,jpg|max:5120'
         ], $messages);
@@ -76,10 +77,10 @@ class keuanganController extends Controller
         ];
 
         $request->validate([
-            'transactionName' => 'required|string',
+            'transactionName' => 'required',
             'price' => 'required|numeric|gt:0',
             'transactionType' => 'required',
-            'note' => 'max:255',
+            'note' => 'required|max:255',
             'transactionDate' => 'date',
             'foto' => 'mimes:jpeg,png,jpg|max:5120'
         ], $messages);
