@@ -28,7 +28,7 @@
             <div class="row g-0">
                 <div class="col-md-4" style="max-height: 250px; max-width: 400px;">
                     <img src="{{ asset('storage/' . $asset->foto) }}" class="img-fluid" alt="..."
-                        style="max-height: 250px">
+                        style="max-height: 250px; min-width: 400px">
                 </div>
                 <div class="col-md-8 d-flex justify-content-evenly">
                     <div class="card-body align-self-center">

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content img {
+    width: 100%;
+}
+
+.register {
+    width: 50%;
+    background-color: #5259A1;
+}
+
+.register {
+    font-family: Itim;
+}
+
+.register h1 {
+    color: #fff;
+}
+
+.btn-primary {
+    color: #000 !important;
+    background-color: #F4D160 !important;
+    border: none !important;
+}

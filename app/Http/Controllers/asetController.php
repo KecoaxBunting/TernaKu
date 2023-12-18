@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\asset;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class asetController extends Controller
 {
     public function show(){
-        $assets = asset::all();
+        $assets = asset::all()->where(Auth::user()->farm_id);
         return view('aset', compact('assets'));
     }
     public function addForm(){
@@ -36,7 +37,7 @@ class asetController extends Controller
         $asset->assetName = $request->assetName;
         $asset->status = $request->status;
         $asset->quantity = $request->quantity;
-        $asset->farm_id = 1;
+        $asset->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             $asset->foto = $request->file('foto')->store('assets');
@@ -76,7 +77,7 @@ class asetController extends Controller
         $asset->assetName = $request->assetName;
         $asset->status = $request->status;
         $asset->quantity = $request->quantity;
-        $asset->farm_id = 1;
+        $asset->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             Storage::delete($asset->foto);

@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\asetController;
 use App\Http\Controllers\dataPakanController;
-use App\Http\Controllers\kesehatanController;
+use App\Http\Controllers\farmController;
 use App\Http\Controllers\keuanganController;
 use App\Http\Controllers\landingController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\produksiController;
+use App\Http\Controllers\signInController;
 use App\Http\Controllers\staffController;
 use App\Http\Controllers\ternakSayaController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +25,21 @@ use Illuminate\Support\Facades\Route;
 
 //Landing page
 Route::get('/', [landingController::class, 'show']);
+
+//Login
+Route::get('/masuk', [loginController::class, 'show']);
+Route::post('/masuk', [loginController::class, 'store']);
+
+//Logout
+Route::get('/keluar', [loginController::class, 'destroy']);
+
+//Sign in
+Route::get('/daftar', [signInController::class, 'show']);
+Route::post('/daftar', [signInController::class, 'store']);
+
+//Farm
+Route::get('/ternak', [farmController::class, 'show']);
+Route::post('/ternak', [farmController::class, 'store']);
 
 //Ternak saya
 Route::get('/ternakSaya', [ternakSayaController::class, 'show']);

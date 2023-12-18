@@ -13,11 +13,13 @@
 
 <body>
     @include('layout.sideNav')
-    <div id="content">
-        @include('layout.header')
-        @yield('content')
-        @include('layout.footer')
+    @include('layout.header')
+    <div class="container">
+        <div id="content container-fluid">
+            @yield('content')
+        </div>
     </div>
+    @include('layout.footer')
 </body>
 
 </html>

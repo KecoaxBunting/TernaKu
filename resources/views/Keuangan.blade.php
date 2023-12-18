@@ -36,7 +36,7 @@
             <div class="row g-0">
                 <div class="col-md-4" style="max-height: 250px; max-width: 400px;">
                     <img src="{{ asset('storage/' . $transaction->foto) }}" class="img-fluid" alt="..."
-                        style="max-height: 250px">
+                        style="max-height: 250px; min-width: 400px">
                 </div>
                 @php
                     $check = $transaction->transaction_type_id;

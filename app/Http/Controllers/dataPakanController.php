@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\feed;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class dataPakanController extends Controller
 {
     public function show(){
-        $feeds = feed::all();
+        $feeds = feed::all()->where(Auth::user()->farm_id);
         return view('dataPakan', compact('feeds'));
     }
     public function addForm(){

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\role;
 use App\Models\staff;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class staffController extends Controller
@@ -41,7 +42,7 @@ class staffController extends Controller
         $staff->phone = $request->phone;
         $staff->address = $request->address;
         $staff->role_id = $request->role;
-        $staff->farm_id = 1;
+        $staff->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             $staff->foto = $request->file('foto')->store('staffs');
@@ -84,7 +85,7 @@ class staffController extends Controller
         $staff->age = $request->age;
         $staff->address = $request->address;
         $staff->role_id = $request->role;
-        $staff->farm_id = 1;
+        $staff->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             Storage::delete($staff->foto);

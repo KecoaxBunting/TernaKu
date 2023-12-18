@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\transaction;
 use App\Models\transactionType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class keuanganController extends Controller
@@ -47,7 +48,7 @@ class keuanganController extends Controller
         $transaction->transaction_type_id = $request->transactionType;
         $transaction->note = $request->note;
         $transaction->transactionDate = $request->transactionDate;
-        $transaction->farm_id = 1;
+        $transaction->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             $transaction->foto = $request->file('foto')->store('transactions');
@@ -91,7 +92,7 @@ class keuanganController extends Controller
         $transaction->transaction_type_id = $request->transactionType;
         $transaction->note = $request->note;
         $transaction->transactionDate = $request->transactionDate;
-        $transaction->farm_id = 1;
+        $transaction->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             Storage::delete($transaction->foto);

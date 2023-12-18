@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('farmName');
             $table->string('location');
+            $table->foreignId('account_id');
             $table->timestamps();
         });
     }

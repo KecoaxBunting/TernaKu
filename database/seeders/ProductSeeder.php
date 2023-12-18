@@ -40,7 +40,7 @@ class ProductSeeder extends Seeder
             [
                 'productName' => 'Keju',
                 'quantity' => 10,
-                'foto'=>'products/keju.jpg'
+                'foto'=>'products/keju.jpeg'
             ],
             [
                 'productName' => 'Yogurt',
@@ -60,12 +60,12 @@ class ProductSeeder extends Seeder
             [
                 'productName' => 'Sosis',
                 'quantity' => 10,
-                'foto'=>'products/sosis.jpg'
+                'foto'=>'products/sosis.jpeg'
             ],
             [
                 'productName'=> 'Null',
                 'quantity' => 0,
-                'foto' => 'products/null.jpg'
+                'foto' => 'products/null.jpeg'
             ]
         ];
         product::insert($datas);

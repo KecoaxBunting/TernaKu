@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\animal;
 use App\Models\animalType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ternakSayaController extends Controller
 {
     public function show(){
-        $animals = animal::all();
+        //dd(Auth::user(),Auth::check());
+        $animals = animal::all()->where(Auth::user()->farm_id);
         return view('ternakSaya', compact('animals'));
     }
     public function addForm(){
@@ -40,8 +42,7 @@ class ternakSayaController extends Controller
         $animal->animal_type_id = $request->animalType;
         $animal->birthDate = $request->birthDate;
         $animal->quantity = $request->quantity;
-        $animal->farm_id = 1;
-        //Auth::user()->farm_id;
+        $animal->farm_id = Auth::user()->farm_id;
         $animal->kesehatan = $request->kesehatan;
 
         if($request->file('foto')){
@@ -85,8 +86,7 @@ class ternakSayaController extends Controller
         $animal->animal_type_id = $request->animalType;
         $animal->birthDate = $request->birthDate;
         $animal->quantity = $request->quantity;
-        $animal->farm_id = 1;
-        //Auth::user()->farm_id;
+        $animal->farm_id = Auth::user()->farm_id;
         $animal->kesehatan = $request->kesehatan;
 
         if($request->file('foto')){

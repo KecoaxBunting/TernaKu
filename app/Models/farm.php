@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class farm extends Model
 {
-    public function account():BelongsTo{
-        return $this->belongsTo(account::class);
+    public function user():BelongsTo{
+        return $this->belongsTo(User::class);
     }
     public function animal():BelongsToMany{
         return $this->belongsToMany(animal::class);
