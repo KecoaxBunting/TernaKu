@@ -10,8 +10,17 @@ class loginController extends Controller
         return view('login');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $message = [
+            'required' => ':attribute harus diisi'
+        ];
+
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ], $message);
+
         if (auth()->attempt(request(['email', 'password'])) == false) {
             return back()->withErrors([
                 'message' => 'Email dan password salah'
