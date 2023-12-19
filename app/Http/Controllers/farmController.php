@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\account;
 use App\Models\farm;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -29,10 +28,10 @@ class farmController extends Controller
         $farm = new farm;
         $farm->farmName = $request->farmName;
         $farm->location = $request->location;
-        $farm->account_id = Auth::user()->id;
+        $farm->user_id = Auth::user()->id;
 
-        $account = User::find($farm->account_id);
-        $account->farm_id = $farm->account_id;
+        $account = User::find($farm->user_id);
+        $account->farm_id = $farm->user_id;
 
         $farm->save();
         $account->save();
