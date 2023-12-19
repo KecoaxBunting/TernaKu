@@ -13,7 +13,7 @@
 
 <body>
     <div class="container">
-        <h1 class="mt-2">Silahkan Masukkan Nama dan Lokasi Ternak</h1>
+        <h1 class="mt-2">Silahkan Masukkan Nama Peternakan dan Lokasi Peternakan</h1>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -26,11 +26,11 @@
         <form action="/ternak" method="POST">
             {{ csrf_field() }}
             <div class="mb-3">
-                <label for="farmName" class="form-label">Nama Ternak</label>
+                <label for="farmName" class="form-label">Nama Peternakan</label>
                 <input type="text" class="form-control" id="farmName" name="farmName">
             </div>
             <div class="mb-3">
-                <label for="location" class="form-label">location</label>
+                <label for="location" class="form-label">Lokasi</label>
                 <input type="text" class="form-control" id="location" name="location">
             </div>
             <button type="submit" class="btn btn-primary">Oke</button>
