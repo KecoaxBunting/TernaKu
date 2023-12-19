@@ -11,7 +11,10 @@ use Illuminate\Support\Facades\Storage;
 class staffController extends Controller
 {
     public function show(){
-        $staffs = staff::all();
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
+        $staffs = staff::where('farm_id', Auth::user()->farm_id)->get();
         return view('staff', compact('staffs'));
     }
     public function addForm(){
@@ -53,10 +56,16 @@ class staffController extends Controller
     }
 
     public function detail($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $staff = staff::find($id);
         return view('staff.detail', compact('staff'));
     }
     public function editForm($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $staff = staff::find($id);
         $roles = role::all();
         return view('staff.edit', compact(['staff', 'roles']));
@@ -97,6 +106,9 @@ class staffController extends Controller
     }
 
     public function destroy($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $staff = staff::find($id);
         $staff->delete();
         Storage::delete($staff->foto);

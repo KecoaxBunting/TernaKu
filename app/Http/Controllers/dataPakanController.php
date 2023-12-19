@@ -10,10 +10,16 @@ use Illuminate\Support\Facades\Storage;
 class dataPakanController extends Controller
 {
     public function show(){
-        $feeds = feed::all()->where(Auth::user()->farm_id);
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
+        $feeds = feed::where('farm_id', Auth::user()->farm_id)->get();
         return view('dataPakan', compact('feeds'));
     }
     public function addForm(){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         return view('dataPakan.add');
     }
     public function store(Request $request){
@@ -34,6 +40,7 @@ class dataPakanController extends Controller
         $feed = new feed;
         $feed->feedName = $request->feedName;
         $feed->quantity = $request->quantity;
+        $feed->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             $feed->foto = $request->file('foto')->store('feeds');
@@ -44,10 +51,16 @@ class dataPakanController extends Controller
     }
 
     public function detail($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $feed = feed::find($id);
         return view('dataPakan.detail', compact('feed'));
     }
     public function editForm($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $feed = feed::find($id);
         return view('dataPakan.edit', compact('feed'));
     }
@@ -70,6 +83,7 @@ class dataPakanController extends Controller
         $feed = feed::find($id);
         $feed->feedName = $request->feedName;
         $feed->quantity = $request->quantity;
+        $feed->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             Storage::delete($feed->foto);
@@ -81,6 +95,9 @@ class dataPakanController extends Controller
     }
 
     public function destroy($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $feed = feed::find($id);
         $feed->delete();
         Storage::delete($feed->foto);

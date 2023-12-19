@@ -22,5 +22,11 @@ class farm extends Model
     public function transaction():HasMany{
         return $this->hasMany(transaction::class);
     }
+    public function feed():HasMany{
+        return $this->hasMany(feed::class);
+    }
+    public function product():HasMany{
+        return $this->hasMany(product::class);
+    }
     use HasFactory;
 }

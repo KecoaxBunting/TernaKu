@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class product extends Model
 {
-    public function animalType():HasMany{
-        return $this->hasMany(animalType::class);
+    public function farm():BelongsToMany{
+        return $this->belongsToMany(farm::class);
     }
     use HasFactory;
 }

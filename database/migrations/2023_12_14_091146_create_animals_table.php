@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('birthDate');
             $table->integer('quantity');
             $table->foreignId('farm_id');
-            $table->foreignId('animal_type_id');
+            $table->string('animalName');
             $table->string('kesehatan');
             $table->string('foto');
             $table->timestamps();

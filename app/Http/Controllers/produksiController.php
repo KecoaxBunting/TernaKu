@@ -4,15 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class produksiController extends Controller
 {
     public function show(){
-        $products = product::all();
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
+        $products = product::where('farm_id', Auth::user()->farm_id)->get();
         return view('produksi', compact('products'));
     }
     public function addForm(){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         return view('produksi.add');
     }
     public function store(Request $request){
@@ -33,6 +40,7 @@ class produksiController extends Controller
         $product = new product;
         $product->productName = $request->productName;
         $product->quantity = $request->quantity;
+        $product->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             $product->foto = $request->file('foto')->store('products');
@@ -43,10 +51,16 @@ class produksiController extends Controller
     }
 
     public function detail($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $product = product::find($id);
         return view('produksi.detail', compact('product'));
     }
     public function editForm($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $product = product::find($id);
         return view('produksi.edit', compact('product'));
     }
@@ -69,6 +83,7 @@ class produksiController extends Controller
         $product = product::find($id);
         $product->productName = $request->productName;
         $product->quantity = $request->quantity;
+        $product->farm_id = Auth::user()->farm_id;
 
         if($request->file('foto')){
             Storage::delete($product->foto);
@@ -80,6 +95,9 @@ class produksiController extends Controller
     }
 
     public function destroy($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $product = product::find($id);
         $product->delete();
         Storage::delete($product->foto);

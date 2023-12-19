@@ -20,53 +20,57 @@ class ProductSeeder extends Seeder
             [
                 'productName' => 'Susu sapi',
                 'quantity' => 10,
-                'foto'=>'products/susu_sapi.jpg'
+                'foto'=>'products/susu_sapi.jpg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Susu kambing',
                 'quantity' => 3,
-                'foto'=>'products/susu_kambing.jpg'
+                'foto'=>'products/susu_kambing.jpg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Telur ayam kampung',
                 'quantity' => 40,
-                'foto'=>'products/telur_ayam_kampung.jpg'
+                'foto'=>'products/telur_ayam_kampung.jpg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Telur omega 3',
                 'quantity' => 40,
-                'foto'=>'products/telur_omega_3.jpg'
+                'foto'=>'products/telur_omega_3.jpg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Keju',
                 'quantity' => 10,
-                'foto'=>'products/keju.jpeg'
+                'foto'=>'products/keju.jpeg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Yogurt',
                 'quantity' => 5,
-                'foto'=>'products/yogurt.jpg'
+                'foto'=>'products/yogurt.jpg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Daging sapi',
                 'quantity' => 4,
-                'foto'=>'products/daging_sapi.jpg'
+                'foto'=>'products/daging_sapi.jpg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Daging ayam',
                 'quantity' => 30,
-                'foto'=>'products/daging_ayam.jpg'
+                'foto'=>'products/daging_ayam.jpg',
+                'farm_id' => 1
             ],
             [
                 'productName' => 'Sosis',
                 'quantity' => 10,
-                'foto'=>'products/sosis.jpeg'
+                'foto'=>'products/sosis.jpeg',
+                'farm_id' => 1
             ],
-            [
-                'productName'=> 'Null',
-                'quantity' => 0,
-                'foto' => 'products/null.jpeg'
-            ]
         ];
         product::insert($datas);
     }

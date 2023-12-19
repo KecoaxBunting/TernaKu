@@ -7,9 +7,11 @@ use App\Http\Controllers\keuanganController;
 use App\Http\Controllers\landingController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\produksiController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\signInController;
 use App\Http\Controllers\staffController;
 use App\Http\Controllers\ternakSayaController;
+use App\Http\Controllers\underConstructionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -143,5 +145,12 @@ Route::put('/staff/edit/{id}', [staffController::class, 'update']);
 //Staff - delete
 Route::get('/staff/hapus/{id}', [staffController::class, 'destroy']);
 
+//Profile
+Route::get('/profil', [profileController::class, 'show']);
+Route::put('/profil', [profileController::class, 'update']);
+Route::put('/profil', [profileController::class, 'changePassword']);
+
+//Under construction
+Route::get('/underConstruction', [underConstructionController::class, 'show']);
 
 

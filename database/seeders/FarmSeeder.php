@@ -18,9 +18,9 @@ class FarmSeeder extends Seeder
     {
         $data = [
             [
-                'farmName'=>'Ternak Pak Jacob',
-                'location'=>'Wonosobo',
-                'account_id'=>1
+                'farmName'=>'Peternakan David',
+                'location'=>'Jember',
+                'user_id'=>1
             ]
         ];
         farm::insert($data);

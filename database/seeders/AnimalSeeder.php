@@ -18,7 +18,7 @@ class AnimalSeeder extends Seeder
     {
         $datas = [
             [
-                'animal_type_id'=>1,
+                'animalName'=>'Ayam Betina',
                 'birthDate'=>'2023-11-12',
                 'quantity'=>20,
                 'farm_id'=>1,
@@ -26,7 +26,7 @@ class AnimalSeeder extends Seeder
                 'foto'=>'animals/ayam_betina.jpg'
             ],
             [
-                'animal_type_id'=>5,
+                'animalName'=>'Sapi Betina',
                 'birthDate'=>'2022-10-23',
                 'quantity'=>10,
                 'farm_id'=>1,

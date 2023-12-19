@@ -7,6 +7,7 @@ use App\Models\User as ModelsUser;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class signInController extends Controller
 {
@@ -21,7 +22,7 @@ class signInController extends Controller
             'gt' => ':attribute harus lebih dari 0 (nol)',
             'mimes' => ':attribute harus berupa .jpeg atau .png, atau .jpg',
             'max' => ':attribute melewati limit',
-            'confirmed' => 'password dan konfirmasi password tidak sama'
+            'confirmed' => 'kata sandi dan konfirmasi kata sandi tidak sama'
         ];
 
         $request->validate([
@@ -33,8 +34,8 @@ class signInController extends Controller
         $user = new User;
         $user->username = $request->username;
         $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-
+        $user->password = Hash::make($request->password);
+        
         $user->save();
         
         auth()->login($user);

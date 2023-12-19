@@ -7,7 +7,7 @@
         <div class="justify-content-end h5" id="navbarSupportedContent">
             <ul class="navbar-nav me-2">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/profile') }}">Profil</a>
+                    <a class="nav-link" href="{{ url('/profil') }}">Profil</a>
                 </li>
                 <li class="nav-item">
                     @method('POST')

@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class farmController extends Controller
 {
     public function show(){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         return view('farm');
     }
     public function store(Request $request){

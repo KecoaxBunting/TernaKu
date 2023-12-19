@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Masuk</title>
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     @include('layout.bootstrap')
     @include('layout.font')
 </head>
@@ -16,7 +16,16 @@
         <img src="{{ asset('images/c.jpg') }}" alt="">
         <div class="position-absolute top-50 start-50 translate-middle register rounded-4">
             <div class="p-4">
-                <h1 class="mb-4">Masuk</h1>
+                <h1 class="mb-4">MASUK</h1>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form method="POST" action="/masuk">
                     {{ csrf_field() }}
                     <div class="mb-3">

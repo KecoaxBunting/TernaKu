@@ -33,7 +33,7 @@
                 <div class="col-md-8 d-flex justify-content-evenly">
                     <div class="card-body align-self-center">
                         <h4 class="card-title mb-0 text-capitalize">
-                            {{ $animal->animalType->animalName }}</h4>
+                            {{ $animal->animalName }}</h4>
                         <p class="card-text mb-0 text-body-secondary text-capitalize">Status: {{ $animal->kesehatan }}
                         </p>
                         <p class="card-text text-body-secondary">Jumlah: {{ $animal->quantity }} ekor</p>

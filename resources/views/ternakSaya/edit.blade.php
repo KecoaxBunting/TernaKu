@@ -28,14 +28,9 @@
                 {{ csrf_field() }}
                 @method('PUT')
                 <div class="mb-3">
-                    <label class="form-label" for="animalType">Hewan</label>
-                    <select class="form-select" aria-label="Default select example" name="animalType">
-                        <option value="{{ $animal->animal_type_id }}" selected>{{ $animal->animalType->animalName }}
-                        </option>
-                        @foreach ($animalTypes as $animalType)
-                            <option value="{{ $animalType->id }}">{{ $animalType->animalName }}</option>
-                        @endforeach
-                    </select>
+                    <label class="form-label" for="animalName">Nama hewan</label>
+                    <input class="form-control" type="text" id="animalName" name="animalName"
+                        value="{{ $animal->animalName }}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="birthDate">Tanggal lahir</label>

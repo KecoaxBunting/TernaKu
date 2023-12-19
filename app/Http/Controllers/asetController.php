@@ -10,10 +10,16 @@ use Illuminate\Support\Facades\Storage;
 class asetController extends Controller
 {
     public function show(){
-        $assets = asset::all()->where(Auth::user()->farm_id);
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
+        $assets = asset::where('farm_id', Auth::user()->farm_id)->get();
         return view('aset', compact('assets'));
     }
     public function addForm(){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         return view('aset.add');
     }
     public function store(Request $request){
@@ -48,10 +54,16 @@ class asetController extends Controller
     }
 
     public function detail($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $asset = asset::find($id);
         return view('aset.detail', compact('asset'));
     }
     public function editForm($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $asset = asset::find($id);
         return view('aset.edit', compact('asset'));
     }
@@ -89,6 +101,9 @@ class asetController extends Controller
     }
 
     public function destroy($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $asset = asset::find($id);
         $asset->delete();
         Storage::delete($asset->foto);

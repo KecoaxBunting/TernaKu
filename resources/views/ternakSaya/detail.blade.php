@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="p-3">
-        <h2 class="fw-bolder text-capitalize">{{ $animal->animalType->animalName }}</h2>
+        <h2 class="fw-bolder text-capitalize">{{ $animal->animalName }}</h2>
         <img class="img-fluid" src="{{ asset('storage/' . $animal->foto) }}" alt="">
         <h5 class="text-capitalize">Tanggal lahir: {{ $animal->birthDate }}</h5>
         <h5 class="text-capitalize">Status kesehatan: {{ $animal->kesehatan }}</h5>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('feedName');
             $table->integer('quantity');
             $table->string('foto');
+            $table->foreignId('farm_id');
             $table->timestamps();
         });
     }

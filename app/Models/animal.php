@@ -12,8 +12,5 @@ class animal extends Model
     public function farm():BelongsToMany{
         return $this->belongsToMany(farm::class);
     }
-    public function animalType():BelongsTo{
-        return $this->belongsTo(animalType::class);
-    }
     use HasFactory;
 }

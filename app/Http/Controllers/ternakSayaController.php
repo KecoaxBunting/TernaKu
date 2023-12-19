@@ -11,13 +11,18 @@ use Illuminate\Support\Facades\Storage;
 class ternakSayaController extends Controller
 {
     public function show(){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         //dd(Auth::user(),Auth::check());
-        $animals = animal::all()->where(Auth::user()->farm_id);
+        $animals = animal::where('farm_id', Auth::user()->farm_id)->get();
         return view('ternakSaya', compact('animals'));
     }
     public function addForm(){
-        $animalTypes = animalType::all();
-        return view('ternakSaya.add', compact('animalTypes'));
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
+        return view('ternakSaya.add');
     }
     public function store(Request $request){
         $messages = [
@@ -31,7 +36,7 @@ class ternakSayaController extends Controller
         ];
 
         $request->validate([
-            'animalType' => 'required',
+            'animalName' => 'required',
             'birthDate' => 'required|date',
             'quantity' => 'required|numeric|gt:0',
             'kesehatan' => 'required|in:sangat sehat,sehat,sakit',
@@ -39,7 +44,7 @@ class ternakSayaController extends Controller
         ], $messages);
 
         $animal = new animal;
-        $animal->animal_type_id = $request->animalType;
+        $animal->animalName = $request->animalName;
         $animal->birthDate = $request->birthDate;
         $animal->quantity = $request->quantity;
         $animal->farm_id = Auth::user()->farm_id;
@@ -54,13 +59,18 @@ class ternakSayaController extends Controller
     }
 
     public function detail($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $animal = animal::find($id);
         return view('ternakSaya.detail', compact('animal'));
     }
     public function editForm($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $animal = animal::find($id);
-        $animalTypes = animalType::all();
-        return view('ternakSaya.edit', compact('animal'), compact('animalTypes'));
+        return view('ternakSaya.edit', compact('animal'));
     }
 
     public function update(Request $request, $id){
@@ -75,7 +85,7 @@ class ternakSayaController extends Controller
         ];
 
         $request->validate([
-            'animalType' => 'required',
+            'animalName' => 'required',
             'birthDate' => 'required|date',
             'quantity' => 'required|numeric|gt:0',
             'kesehatan' => 'required|in:sangat sehat,sehat,sakit',
@@ -83,7 +93,7 @@ class ternakSayaController extends Controller
         ], $messages);
 
         $animal = animal::find($id);
-        $animal->animal_type_id = $request->animalType;
+        $animal->animalName = $request->animalName;
         $animal->birthDate = $request->birthDate;
         $animal->quantity = $request->quantity;
         $animal->farm_id = Auth::user()->farm_id;
@@ -99,6 +109,9 @@ class ternakSayaController extends Controller
     }
 
     public function destroy($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $animal = animal::find($id);
         $animal->delete();
         Storage::delete($animal->foto);

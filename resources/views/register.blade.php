@@ -16,7 +16,16 @@
         <img src="{{ asset('images/c.jpg') }}" alt="">
         <div class="position-absolute top-50 start-50 translate-middle register rounded-4">
             <div class="p-4">
-                <h1 class="mb-4">Daftar</h1>
+                <h1 class="mb-4">DAFTAR</h1>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form method="POST" action="/daftar">
                     {{ csrf_field() }}
                     <div class="mb-3">

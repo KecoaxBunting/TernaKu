@@ -34,7 +34,7 @@
                     <div class="card-body align-self-center">
                         <h4 class="card-title mb-0 text-capitalize">
                             {{ $asset->assetName }}</h4>
-                        <p class="card-text text-body-secondary mb-0">Status: {{ $asset->status }}</p>
+                        <p class="card-text text-body-secondary mb-0 text-capitalize">Status: {{ $asset->status }}</p>
                         <p class="card-text text-body-secondary">Jumlah: {{ $asset->quantity }} buah</p>
                     </div>
                     <div class="card-body align-self-center">

@@ -11,15 +11,21 @@ use Illuminate\Support\Facades\Storage;
 class keuanganController extends Controller
 {
     public function show(){
-        $transactions = transaction::all();
-        $in = transaction::where('transaction_type_id', 1)->get();
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
+        $transactions = transaction::where('farm_id', Auth::user()->farm_id)->get();
+        $in = transaction::where('transaction_type_id', 1)->where('farm_id', Auth::user()->farm_id)->get();
         $in_total = $in->sum('price');
-        $out = transaction::where('transaction_type_id', 2)->get();
+        $out = transaction::where('transaction_type_id', 2)->where('farm_id', Auth::user()->farm_id)->get();
         $out_total = $out->sum('price');
-        $labels = transaction::selectRaw('MONTH(transactionDate)')->get();
+        $labels = transaction::selectRaw('MONTH(transactionDate)')->where('farm_id', Auth::user()->farm_id)->get();
         return view('keuangan', compact(['transactions', 'in_total', 'out_total', 'labels']));
     }
     public function addForm(){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $transactionTypes = transactionType::all();
         return view('keuangan.add', compact('transactionTypes'));
     }
@@ -59,10 +65,16 @@ class keuanganController extends Controller
     }
 
     public function detail($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $transaction = transaction::find($id);
         return view('keuangan.detail', compact('transaction'));
     }
     public function editForm($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $transaction = transaction::find($id);
         $transactionTypes = transactionType::all();
         return view('keuangan.edit', compact(['transaction', 'transactionTypes']));
@@ -104,6 +116,9 @@ class keuanganController extends Controller
     }
 
     public function destroy($id){
+        if(Auth::check()==false){
+            return redirect('/masuk');
+        }
         $transaction = transaction::find($id);
         $transaction->delete();
         Storage::delete($transaction->foto);

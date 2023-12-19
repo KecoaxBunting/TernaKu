@@ -42,7 +42,7 @@
         <div class="position-absolute top-50 start-50 translate-middle w-100">
             <div class="h1 one mb-5 fw-bolder">Berternak Menjadi</div>
             <div class="h1 two mb-5 fw-bolder">Lebih Mudah Dan Menyenangkan</div>
-            <a href="#" class="h2"><button class="btn btn-primary btn-lg border-0 rounded-pill">Daftar
+            <a href="/daftar" class="h2"><button class="btn btn-primary btn-lg border-0 rounded-pill">Daftar
                     Sekarang</button></a>
         </div>
     </div>
@@ -78,7 +78,8 @@
                 </svg>
                 <div class="h4 fw-bolder">Whatsapp</div>
                 <div class="h5 mb-3">(Senin-Jumat, 08.00-22.00)</div>
-                <a href="#"><button class="btn btn-primary border-0 rounded-pill">Chat Sekarang</button></a>
+                <a href="/underConstruction"><button class="btn btn-primary border-0 rounded-pill">Chat
+                        Sekarang</button></a>
 
             </div>
             <div class="livechat text-center">
@@ -89,7 +90,8 @@
                 </svg>
                 <div class="h4 fw-bolder">Live Chat</div>
                 <div class="h5 mb-3">(Senin-Jumat, 24 Jam)</div>
-                <a href="#"><button class="btn btn-primary border-0 rounded-pill">Chat Sekarang</button></a>
+                <a href="/underConstruction"><button class="btn btn-primary border-0 rounded-pill">Chat
+                        Sekarang</button></a>
 
             </div>
         </div>

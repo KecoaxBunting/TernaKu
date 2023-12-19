@@ -20,17 +20,20 @@ class FeedSeeder extends Seeder
             [
                 'feedName' => 'Pakan ayam',
                 'quantity' => 36,
-                'foto' => 'feeds/pakan_ayam.jpg'
+                'foto' => 'feeds/pakan_ayam.jpg',
+                'farm_id' => 1
             ],
             [
                 'feedName' => 'Pakan sapi',
                 'quantity' => 36,
-                'foto' => 'feeds/pakan_sapi.jpg'
+                'foto' => 'feeds/pakan_sapi.jpg',
+                'farm_id' => 1
             ],
             [
                 'feedName' => 'Pakan kambing',
                 'quantity' => 36,
-                'foto' => 'feeds/pakan_kambing.jpeg'
+                'foto' => 'feeds/pakan_kambing.jpeg',
+                'farm_id' => 1
             ]
         ];
         feed::insert($datas);
