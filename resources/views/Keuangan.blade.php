@@ -12,9 +12,9 @@
             </div>
         @endif
     </div>
-    <div class="px-2">
-        <h5 class="pemasukan">Pemasukan bulan ini: Rp.{{ $in_total }}</h5>
-        <h5 class="pengeluaran">Pengeluaran bulan ini: Rp.{{ $out_total }}</h5>
+    <div class="px-2 mt-2">
+        <h5 class="pemasukan">Pemasukan : Rp.{{ $in_total }}</h5>
+        <h5 class="pengeluaran">Pengeluaran : Rp.{{ $out_total }}</h5>
     </div>
     {{-- <div class="chart">
         <h1>Pemasukan dan Pengeluaran</h1>
