@@ -14,7 +14,7 @@
 <body>
     @include('layout.sideNav')
     @include('layout.header')
-    <div class="container">
+    <div class="container mb-5">
         <div id="content container-fluid">
             @yield('content')
         </div>
